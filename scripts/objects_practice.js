@@ -13,9 +13,15 @@ let myLibrary = [];
 // create a few test book objects
 const book1 = new BookObjs('J.K. Rowling', 'Harry Potter and the Sorcerer\'s Stone', 309, true);
 const book2 = new BookObjs('GOD', 'Bible', 2000, false);
+const book3 = new BookObjs('Anonymous', 'Test Book Number 3', 309, true);
+const book4 = new BookObjs('John Adams', 'A walk to remember (french version)', 5550, false);
+const book5 = new BookObjs('Tina Turner', 'Silence of the Lambs', 19, true);
 // add to library array
 addBookToLibrary(book1);
 addBookToLibrary(book2);
+addBookToLibrary(book3);
+addBookToLibrary(book4);
+addBookToLibrary(book5);
 
 
 // modal selection and fucntionality

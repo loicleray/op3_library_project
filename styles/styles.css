@@ -8,6 +8,8 @@
   --info-color: #17a2b8; /* teal */
   --light-color: #f8f9fa; /* light gray */
   --dark-color: #343a40; /* dark gray */
+  --dark-gradient: linear-gradient(45deg, #343a40, #6c757d);
+  --light-gradient: linear-gradient(45deg, #f8f9fa, #6c757d);
 }
 
 * {
@@ -22,29 +24,51 @@
   list-style: none;
 }
 
+label {
+  font-size: 1rem;
+  color: var(--light-color);
+  font-weight: 400;
+}
+
+input {
+  background: var(--dark-gradient);
+  border: none;
+  border-bottom: 1px solid var(--dark-color);
+  color: var(--light-color);
+}
+
 .background {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-content: space-between;
+  align-content: space-between;
+  gap: 1rem 1rem;
   padding: 1rem;
-  background-color: var(--warning-color);
+  background-image: linear-gradient(45deg, var(--light-color), var(--secondary-color));
 }
 
 .book_container {
   display: flex;
   flex-direction: column;
-  width: clamp(400px, 500px, 80%);
+  justify-content: space-between;
+  height: 100%;
   padding: 1rem;
-  border-width: 0.2rem;
-  border-style: solid;
-  border-radius: 0.2rem;
-  border-color: var(--danger-color);
-  background: #f8f9fa;
+  background: rgba(248, 249, 250, 0.2);
+  box-shadow: 0 0.5rem 1rem 0 var(--secondary-color);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border-radius: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.book_container p {
+  color: red;
 }
 
 .booktitle {
-  font-size: 1.5rem;
-  color: #dc3545;
+  font-size: 1.2rem;
+  color: var(--dark-color);
   font-weight: 500;
 }
 
@@ -119,22 +143,25 @@ dialog {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #007bff;
-  width: clamp(95%, 200px, 300px);
   padding: 1rem;
-  border-radius: 1rem;
-  border: none;
+  background: rgba(248, 249, 250, 0.1);
+  box-shadow: 0 0.5rem 1rem 0 var(--dark-color);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border-radius: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 dialog::backdrop {
-  background-color: orange;
-  opacity: 0.4;
+  background: linear-gradient(45deg, #343a40, #6c757d);
+  opacity: 0.95;
 }
 
 .divDiag {
   display: flex;
   flex-direction: column;
   justify-content: start;
+  align-items: center;
 }
 
 .button-div {
@@ -162,4 +189,8 @@ dialog #cancel {
   border: none;
   border-radius: 0.2rem;
   padding: 0.2em;
+}
+
+dialog #cancel:hover {
+  background-color: #ba2232;
 }/*# sourceMappingURL=styles.css.map */
